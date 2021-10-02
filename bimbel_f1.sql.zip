@@ -1,0 +1,97 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 19, 2020 at 09:11 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bimbel_f1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `multiuserlogin`
+--
+
+CREATE TABLE `multiuserlogin` (
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  `Logintypes` varchar(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `multiuserlogin`
+--
+
+INSERT INTO `multiuserlogin` (`Username`, `Password`, `Logintypes`) VALUES
+('admin', 'adminbimbelf1', 'Admin'),
+('G7X7KZL1', 'G7X7KZL1password', 'Student'),
+('G7X6KZL2', 'G7X6KZL2password', 'Student'),
+('G7X5KZL3', 'G7X5KZL3password', 'Student'),
+('G7X4KZL4', 'G7X4KZL4password', 'Student'),
+('G7X3KZL5', 'G7X3KZL5password', 'Student'),
+('G7X2KZL6', 'G7X2KZL6password', 'Student'),
+('G7X1KZL7', 'G7X1KZL7password', 'Student');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `Student_ID` char(8) NOT NULL,
+  `Student_Name` varchar(45) NOT NULL,
+  `DateOfBirth` date NOT NULL,
+  `Phone_Number` bigint(20) NOT NULL,
+  `Address` varchar(50) NOT NULL,
+  `Student_Email` varchar(50) NOT NULL,
+  `Teacher` varchar(50) NOT NULL,
+  `Class` varchar(20) NOT NULL,
+  `Exam_Code` char(18) NOT NULL,
+  `Exam_Score` float NOT NULL,
+  `Status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`Student_ID`, `Student_Name`, `DateOfBirth`, `Phone_Number`, `Address`, `Student_Email`, `Teacher`, `Class`, `Exam_Code`, `Exam_Score`, `Status`) VALUES
+('G7X1KZL7', 'Akinyi Ventseslav', '1999-03-15', 628528823821, 'Jl. Latumenten III No. 61', 'Akinyi.bta@outlook.com', 'Milica Damyan', 'Private F1-GO', 'GORev1-F1-PRE-G7X7', 90.2, 'Active'),
+('G7X2KZL6', 'Helena Lesya', '2000-01-07', 6289273718839, 'Jl. Temiang IV No. 10-11C', 'lesya.helena@spambog.de', 'Simiyu Engelbert', 'Private F1-CH', 'CHRev1-F1-PRE-G7X6', 91.5, 'Active'),
+('G7X3KZL5', 'Arnold Elihu', '1999-05-05', 6287888548912, 'Jl. Temiang I No. 31', 'elh.arn05@ymail.com', 'Euthalia Arastoo', 'Private F1-HI', 'ENRev1-F1-PRE-G7X5', 85, 'Inactive'),
+('G7X4KZL4', 'Lucjan Mladenka', '2000-06-19', 6281388129231, 'Jl. Teguh VIII No. 05', 'denka.lucjan@ymail.com', 'Suzan Wapasha', 'Private F1-PH', 'ENRev1-F1-PRE-G7X4', 90, 'Inactive'),
+('G7X5KZL3', 'Adanna Marita', '2001-05-22', 6283891969728, 'Jl. Pulau Galang No. 8-9B', 'marita.bz1l@outlook.com', 'Kay Haris', 'Private F1-BO', 'ENRev1-F1-PRE-G7X3', 67.7, 'Active'),
+('G7X6KZL2', 'Christian Hulda', '1998-09-02', 6285574670577, 'Jl. Pulau Bidadari No. 38A', 'hulda.z9pa@outlook.com', 'Selim Eustachys', 'Private F1-MA', 'MARev1-F1-PRE-G7X2', 78, 'Active'),
+('G7X7KZL1', 'Zyanya Grady', '2000-12-12', 6287888041291, 'Jl. Pulau Laki No. 17', 'zyanya.grady@spambog.com', 'Ragnvald Diodotos', 'Private F1-EN', 'ENRev1-F1-PRE-G7X1', 88.4, 'Active');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`Student_ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
